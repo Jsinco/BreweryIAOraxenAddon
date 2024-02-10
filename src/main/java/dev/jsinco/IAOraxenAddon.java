@@ -25,15 +25,15 @@ public class IAOraxenAddon extends BreweryAddon {
         PluginItem.registerForConfig("itemsadder", ItemsAdderPluginItem::new);
         PluginItem.registerForConfig("oraxen", OraxenPluginItem::new);
 
-        Bukkit.getScheduler().runTaskLater(plugin, () -> {
+        BreweryPlugin.getScheduler().runTaskLater(() -> {
             useItemsAdder = Bukkit.getPluginManager().getPlugin("ItemsAdder") != null;
             useOraxen = Bukkit.getPluginManager().getPlugin("Oraxen") != null;
 
             if (useItemsAdder) {
-                logger.info("&dItemsAdder support enabled!");
+                logger.info("ItemsAdder support enabled!");
             }
             if (useOraxen) {
-                logger.info("&dOraxen support enabled!");
+                logger.info("Oraxen support enabled!");
             }
         }, 1L);
     }
