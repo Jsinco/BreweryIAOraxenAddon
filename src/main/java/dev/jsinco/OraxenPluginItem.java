@@ -10,6 +10,11 @@ public class OraxenPluginItem extends PluginItem {
         if (!IAOraxenAddon.isUsingOraxen()) {
             return false;
         }
-        return OraxenItems.getIdByItem(itemStack) != null;
+
+        final String itemId = OraxenItems.getIdByItem(itemStack);
+        if (itemId == null) {
+            return false;
+        }
+        return itemId.equals(this.getItemId());
     }
 }

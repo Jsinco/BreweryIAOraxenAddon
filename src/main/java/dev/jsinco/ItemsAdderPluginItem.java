@@ -10,6 +10,11 @@ public class ItemsAdderPluginItem extends PluginItem {
         if (!IAOraxenAddon.isUsingItemsAdder()) {
             return false;
         }
-        return CustomStack.byItemStack(itemStack) != null;
+
+        final CustomStack cs = CustomStack.byItemStack(itemStack);
+        if (cs == null) {
+            return false;
+        }
+        return cs.getId().equals(this.getItemId());
     }
 }

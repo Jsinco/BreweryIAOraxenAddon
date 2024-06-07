@@ -9,14 +9,13 @@ import org.bukkit.Bukkit;
 
 public class IAOraxenAddon extends BreweryAddon {
 
-    private static BreweryPlugin plugin;
+
     private static AddonLogger logger;
     private static boolean useItemsAdder = false;
     private static boolean useOraxen = false;
 
     public IAOraxenAddon(BreweryPlugin plugin, AddonLogger logger) {
         super(plugin, logger);
-        IAOraxenAddon.plugin = plugin;
         IAOraxenAddon.logger = logger;
     }
 
